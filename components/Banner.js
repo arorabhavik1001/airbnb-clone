@@ -9,11 +9,11 @@ function Banner() {
         objectFit="cover"
       />
       <div className="block lg:hidden absolute top-1/4 w-full">
-        <p className="font-bold text-xl md:text-4xl text-white ml-5 md:ml-10">Olympian <br />&amp; <br />Paralympian <br />Online <br />Experiences</p>
-        <button className="hidden lg:block bg-white rounded-lg py-1.5 px-4 ml-10 mt-10">Explore now</button>
+        <p className="font-bold text-xl md:text-4xl text-white ml-5 md:ml-10">Airbnb <br />Clone <br />by Bhavik</p>
+        <button className=" bg-white rounded-lg py-1.5 px-4 ml-10 mt-10">Explore now</button>
       </div>
       <div className="hidden lg:block absolute top-1/4 w-full">
-        <p className="font-bold text-7xl text-white md:ml-10 ml-20">Olympian &amp; <br />Paralympian <br />Online <br />Experiences</p>
+        <p className="font-bold text-7xl text-white md:ml-10 ml-20">Airbnb Clone <br />by Bhavik</p>
         <button className="bg-white rounded-lg py-1.5 px-4 ml-20 md:ml-10 mt-10 hover:shadow-xl active:scale-90 transition duration-150">Explore now</button>
       </div>
     </div>
