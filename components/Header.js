@@ -89,7 +89,7 @@ function Header({placeholder}) {
               rangeColors={["#FD5B61"]}
               onChange={handleChange}
               showPreview={false}
-            />
+            /> 
             {/* <div className="flex sm:hidden items-center border-b mb-4">
               <h2 className=" text-lg flex-grow font-semibold">
                 Number of Guests

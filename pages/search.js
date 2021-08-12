@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import { useRouter } from "next/dist/client/router";
 import { format } from "date-fns";
 import Inforcard from "../components/Inforcard";
+import Map from "../components/Map";
+import { useState } from "react";
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -10,6 +12,7 @@ function Search({ searchResults }) {
   const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
   const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
   const range = `${formattedStartDate} - ${formattedEndDate}`;
+  const [popupIndex, setPopupIndex] = useState('')
 
   const styleForFilters =
     "px-4 py-2 border hover:shadow-lg rounded-full cursor-pointer m-2 active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out";
@@ -18,7 +21,7 @@ function Search({ searchResults }) {
       <Header
         placeholder={`${location} | ${range} | ${numberOfGuests} guests`}
       />
-      <main className="flex">
+      <main className="flex flex-col sm:flex-row ">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
             300+ Stays - {range} - for {numberOfGuests} Guest(s).
@@ -35,7 +38,8 @@ function Search({ searchResults }) {
           </div>
           <div className="flex flex-col ">
           {searchResults.map(
-            ({ img, location, title, description, star, price, total }) => (
+            ({ img, location, title, description, star, price, total }, index) => (
+              <div onClick={() => setPopupIndex(index)}>
               <Inforcard
                 key={img}
                 img={img}
@@ -45,10 +49,15 @@ function Search({ searchResults }) {
                 star={star}
                 price={price}
                 total={total}
+                id={index}
               />
-            )
+              </div>
+              )
           )}
           </div>
+        </section>
+        <section className="   xl:min-w-[600px]">
+          <Map searchResults={searchResults} popupIndex={popupIndex} />
         </section>
       </main>
       <Footer />
