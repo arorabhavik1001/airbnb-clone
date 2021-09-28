@@ -14,8 +14,7 @@ function Search({ searchResults }) {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
   const [popupIndex, setPopupIndex] = useState('')
 
-  const styleForFilters =
-    "px-4 py-2 border hover:shadow-lg rounded-full cursor-pointer m-2 active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out";
+  const styleForFilters = `px-4 py-2 border hover:shadow-lg rounded-full cursor-pointer m-2 active:scale-95 active:bg-gray-100 transition transform duration-100 ease-out`;
   return (
     <div>
       <Header
